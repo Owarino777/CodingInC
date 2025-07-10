@@ -32,7 +32,9 @@ int main() {
     // Step 1: Get the item name from the user
     printf("What item would you like to buy?: ");
     fgets(item, sizeof(item), stdin);           // Read a line of text including spaces
-    item[strlen(item) - 1] = '\0';              // Remove the newline character that fgets() includes
+    if (item[strlen(item) - 1] == '\n') {       // Only remove if the last character is a newline
+        item[strlen(item) - 1] = '\0';
+    }
 
     // Step 2: Get the price per unit
     printf("What is the price for each?: ");
@@ -45,8 +47,8 @@ int main() {
     // Step 4: Calculate the total cost
     total = price * quantity;                   // Basic multiplication: unit price × quantity
 
-    // Step 5: Display the purchase summary
-    printf("\nYou have bought %d %s/s\n", quantity, item);    // Show quantity and item name
+    printf("The total is: %c%.2f\n", currency, total);          // Show currency symbol and total (2 decimal places)
+    printf("\nYou have bought %d %s(s)\n", quantity, item);    // Show quantity and item name
     printf("The total is: %c%.2f", currency, total);          // Show currency symbol and total (2 decimal places)
 
     return 0;   // Indicate successful program execution
