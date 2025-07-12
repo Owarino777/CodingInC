@@ -1,5 +1,20 @@
+# Ignore compiled executables
+*.exe
+
+# Specific executable files
 /formatSpecifier.exe
 /main.exe
 /variable.exe
 **/userInput.exe
 shoppingCartProgram.exe
+madLibsGame.exe
+
+# IDE and editor files
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db

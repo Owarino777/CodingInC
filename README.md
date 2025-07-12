@@ -123,6 +123,39 @@ This repository serves as a hands-on learning resource for C programming fundame
 
 ---
 
+### 6. 📖 Mad Libs Game (`madLibsGame.c`)
+**Status:** ✅ Complete  
+**Timestamp:** *(01:15:38 from tutorial)*
+**Concepts Covered:**
+- Interactive text-based game programming
+- Multiple string inputs with `fgets()`
+- String buffer management and cleanup
+- String length calculation with `strlen()`
+- Creative string interpolation and formatting
+- User experience design in console applications
+
+**Key Learning Points:**
+- `fgets()` is safer than `scanf()` for string input as it prevents buffer overflow
+- Manual newline removal is essential when using `fgets()`
+- Creative programming can make learning more engaging and fun
+- User prompts should be clear and specific for better user experience
+- String arrays must be properly sized to accommodate expected input
+
+**Code Highlights:**
+```c
+// Safe string input with fgets() and newline removal
+printf("Enter an adjective (description): ");
+fgets(adjective1, sizeof(adjective1), stdin);
+adjective1[strlen(adjective1) - 1] = '\0'; // Remove newline
+
+// Creative story generation with string interpolation
+printf("\nToday I went to a %s zoo.\n", adjective1);
+printf("In a exhibit, I saw a %s.\n", noun);
+printf("%s was %s and %s!\n", noun, adjective2, verb);
+```
+
+---
+
 ## 🔧 Compilation Instructions
 
 ### Individual Programs
@@ -133,6 +166,7 @@ gcc variable.c -o variable.exe
 gcc formatSpecifier.c -o formatSpecifier.exe
 gcc userInput.c -o userInput.exe
 gcc shoppingCartProgram.c -o shoppingCartProgram.exe
+gcc madLibsGame.c -o madLibsGame.exe
 
 # Run the program
 ./main.exe
@@ -141,10 +175,10 @@ gcc shoppingCartProgram.c -o shoppingCartProgram.exe
 ### Compile All Programs (Batch)
 ```bash
 # Windows (PowerShell/CMD)
-gcc main.c -o main.exe && gcc variable.c -o variable.exe && gcc formatSpecifier.c -o formatSpecifier.exe && gcc userInput.c -o userInput.exe && gcc shoppingCartProgram.c -o shoppingCartProgram.exe
+gcc main.c -o main.exe && gcc variable.c -o variable.exe && gcc formatSpecifier.c -o formatSpecifier.exe && gcc userInput.c -o userInput.exe && gcc shoppingCartProgram.c -o shoppingCartProgram.exe && gcc madLibsGame.c -o madLibsGame.exe
 
 # Linux/Mac
-gcc main.c -o main && gcc variable.c -o variable && gcc formatSpecifier.c -o formatSpecifier && gcc userInput.c -o userInput && gcc shoppingCartProgram.c -o shoppingCartProgram
+gcc main.c -o main && gcc variable.c -o variable && gcc formatSpecifier.c -o formatSpecifier && gcc userInput.c -o userInput && gcc shoppingCartProgram.c -o shoppingCartProgram && gcc madLibsGame.c -o madLibsGame
 ```
 
 ## 📈 Learning Progress
@@ -157,6 +191,7 @@ gcc main.c -o main && gcc variable.c -o variable && gcc formatSpecifier.c -o for
 - [x] User input handling
 - [x] Basic string manipulation
 - [x] Conditional statements (if/else)
+- [x] Interactive text-based game programming (Mad Libs)
 
 ### 🚧 Currently Learning
 - [ ] *Add new topics here as you progress*
@@ -170,7 +205,7 @@ gcc main.c -o main && gcc variable.c -o variable && gcc formatSpecifier.c -o for
 - [x] ➗ Arithmetic operators *(00:44:15)*
 - [x] ⌨ User input *(00:50:40)*
 - [x] ⭐ 🛒 Shopping cart program *(01:06:54)*
-- [ ] ⭐ 📖 Mad libs game *(01:15:38)*
+- [x] ⭐ 📖 Mad libs game *(01:15:38)*
 
 #### 🧮 **Math & Calculations** (01:25:25 - 01:44:28)
 - [ ] 🧮 Math functions *(01:25:25)*
@@ -288,7 +323,7 @@ As you progress in your C learning journey, update this README by:
 
 ### 📊 Learning Statistics
 - **Total Topics:** 42 concepts
-- **Completed:** 7/42 (16.7%)
+- **Completed:** 8/42 (19.0%)
 - **Major Projects:** 11 practical applications
 - **Estimated Time:** ~6.7 hours of content
 
@@ -296,5 +331,5 @@ As you progress in your C learning journey, update this README by:
 
 **Happy Coding! 🎉**
 
-*Last Updated: July 9, 2025*
+*Last Updated: December 30, 2024*
 *Tutorial Progress: 01:15:38 / 06:43:23*
