@@ -1,0 +1,1 @@
+Number of times interest is compounded per year
